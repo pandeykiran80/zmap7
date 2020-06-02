@@ -1,0 +1,20 @@
+I got an error like this while running ZMap
+
+
+Error: File: calc_Omoricross.m Line: 10 Column: 34
+Validator function must reference the 'MainShockSelection' property.
+
+Error in ZmapMainWindow/create_all_menus/create_xsec_analysis_menu (line 152)
+        calc_Omoricross.AddMenuItem(submenu, @()obj.xsec_zap, 'Enable', 'off');
+
+Error in ZmapMainWindow/create_all_menus (line 32)
+    create_xsec_analysis_menu();
+
+Error in ZmapMainWindow/prepareMainFigure (line 860)
+            obj.create_all_menus(true); % plot_base_events(...) must have already been called, in order to load the features from ZG
+
+Error in ZmapMainWindow (line 224)
+            obj.prepareMainFigure();
+
+Error in zmap (line 207)
+            ZmapMainWindow(cw, ZmapCatalog);
